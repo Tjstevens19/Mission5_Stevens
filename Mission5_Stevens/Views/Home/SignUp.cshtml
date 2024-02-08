@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+<style>
+    body {
+        background-image: url('@Url.Content("~/golf-course-background.jpg")');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Welcome to Taylor's Greens! Use this page to sign up and explore the exciting world of golf instruction.</p>
+
+<!-- Calculator Section -->
+<div>
+    <h2>Golf Tutoring Services Calculator</h2>
+
+    <label for="hours">Number of Hours:</label>
+    <input type="number" id="hours" min="0" step="1" placeholder="Enter hours" />
+
+    <div>
+        <label>Hourly Charge:</label>
+        <span id="hourlyCharge">$80</span>
+    </div>
+
+    <button id="calculateBtn">Calculate Total</button>
+
+    <div>
+        <label>Total Cost: $</label>
+        <span id="totalCost">0</span>
+    </div>
+
+    <a href="/">Back to Home Page</a>
+</div>
+
+<!-- jQuery Script -->
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#calculateBtn').click(function () {
+                // Retrieve values
+                var hours = parseFloat($('#hours').val());
+
+                // Validate input
+                if (isNaN(hours) || hours < 0) {
+                    alert('Please enter a valid positive number for hours.');
+                    return;
+                }
+
+                // Calculate total
+                var hourlyCharge = 80;
+                var total = hours * hourlyCharge;
+
+                // Display total
+                $('#totalCost').text(total.toFixed(2));
+            });
+        });
+    </script>
+}
