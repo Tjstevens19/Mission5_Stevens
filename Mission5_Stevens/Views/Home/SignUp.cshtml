@@ -10,31 +10,35 @@
     }
 </style>
 
-<h1>@ViewData["Title"]</h1>
+<h1 class ="text-center">@ViewData["Title"]</h1>
 
-<p>Welcome to Taylor's Greens! Use this page to sign up and explore the exciting world of golf instruction.</p>
+<div class="text-center">
+    <p style="font-size: 36px;">Welcome to Taylor's Greens! Use this page to sign up and explore the exciting world of golf instruction.</p>
 
-<!-- Calculator Section -->
-<div>
-    <h2>Golf Tutoring Services Calculator</h2>
-
-    <label for="hours">Number of Hours:</label>
-    <input type="number" id="hours" min="0" step="1" placeholder="Enter hours" />
-
+    <!-- Calculator Section -->
     <div>
-        <label>Hourly Charge:</label>
-        <span id="hourlyCharge">$80</span>
+        <h2 style="font-size: 48px;">Golf Tutoring Services Calculator</h2>
+
+        <label for="hours" style="font-size: 32px;">Number of Hours:</label>
+        <input type="number" id="hours" min="0" step="1" placeholder="Enter hours" />
+
+        <div style="font-size: 32px;">
+            <label>Hourly Charge:</label>
+            <span id="hourlyCharge">$80</span>
+        </div>
+
+        <button id="calculateBtn" style="font-size: 32px;">Calculate Total</button>
+
+        <div style="font-size: 32px;">
+            <label>Total Cost: $</label>
+            <span id="totalCost">0</span>
+        </div>
+
+        <a href="/" style="font-size: 32px;">Back to Home Page</a>
     </div>
-
-    <button id="calculateBtn">Calculate Total</button>
-
-    <div>
-        <label>Total Cost: $</label>
-        <span id="totalCost">0</span>
-    </div>
-
-    <a href="/">Back to Home Page</a>
 </div>
+
+
 
 <!-- jQuery Script -->
 @section Scripts {
